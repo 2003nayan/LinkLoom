@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ArrowRight, BarChart3, CheckCircle, Palette, Shield, Smartphone, Star, Users, Zap } from "lucide-react";
 import Header from "@/components/Header";
+import { auth } from "@clerk/nextjs/server";
+import { redirect } from "next/navigation";
 
 const features = [
   {
@@ -57,11 +59,15 @@ const testimonials = [
   }
 ]
 
-export default function Home() {
+export default async function Home() {
+  const { userId } = await auth();
+
+  if (userId) {
+    redirect("/dashboard");
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-r from-gray-50 to-gray-100">
-
-
       <Header isFixed={true} />
       {/* Hero Section */}
       <section className="px-4 py-20 lg:px-8 lg:py-32">
@@ -252,10 +258,9 @@ export default function Home() {
                 <div>Status</div>
               </div>
             </div>
-
-            <div className="border-t border-gray-200 mt-12 pt-8 text-center text-gray-500">
-              <p>&copy; 2025 Nayan Katiyara. All rights reserved.</p>
-            </div>
+          </div>
+          <div className="border-t border-gray-200 mt-12 pt-8 text-center text-gray-500">
+            <p>Built with ❤️ by Nayan Katiyara</p>
           </div>
         </div>
       </footer>
