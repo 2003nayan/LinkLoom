@@ -1,0 +1,14 @@
+{
+    "host": "https://api.us-east.tinybird.co",
+    "id": "dcd74623-340a-41e3-9f4f-f74dc3207fc2",
+    "name": "linkloom",
+    "scope": "user",
+    "token": "p.eyJ1IjogImRjZDc0NjIzLTM0MGEtNDFlMy05ZjRmLWY3NGRjMzIwN2ZjMiIsICJpZCI6ICJmNTA1ZTUzNS1mMTgxLTQ0NTctODhhYi1kM2I5NmZjZDZhMDMiLCAiaG9zdCI6ICJ1c19lYXN0In0.OzqDTWLfoPf6M31MpncutMGzR-B2dpc6FdKjpf2o3y0",
+    "tokens": {
+        "https://api.us-east.tinybird.co": "p.eyJ1IjogImRjZDc0NjIzLTM0MGEtNDFlMy05ZjRmLWY3NGRjMzIwN2ZjMiIsICJpZCI6ICJmNTA1ZTUzNS1mMTgxLTQ0NTctODhhYi1kM2I5NmZjZDZhMDMiLCAiaG9zdCI6ICJ1c19lYXN0In0.OzqDTWLfoPf6M31MpncutMGzR-B2dpc6FdKjpf2o3y0"
+    },
+    "user_email": "nayankatiyara123@gmail.com",
+    "user_id": "647d89db-f316-488c-a8ce-8409eeac8bc8",
+    "user_token": "p.eyJ1IjogIjY0N2Q4OWRiLWYzMTYtNDg4Yy1hOGNlLTg0MDllZWFjOGJjOCIsICJpZCI6ICIyMmNlNzI4Yi0yMDI5LTQ5MjMtODg5ZS1kNzE4MmIyNGQyYTMiLCAiaG9zdCI6ICJ1c19lYXN0In0.2U8MgPcOA5bprGEGKadqkAkwiuwdGXaFBL06hHmzuYw",
+    "version": "0.0.1.dev213"
+}
