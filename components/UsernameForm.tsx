@@ -7,10 +7,11 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "./ui/form";
 import { Input } from "./ui/input";
-import { AlertCircle, CheckCircle, Loader2, User } from "lucide-react";
+import { AlertCircle, CheckCircle, ExternalLink, Loader2, User } from "lucide-react";
 import { Button } from "./ui/button";
 import { useMutation, useQuery } from "convex/react";
 import { api } from "@/convex/_generated/api";
+import Link from "next/link";
 
 const formSchema = z.object({
     username: z.string().min(3, "Username must be atleast of 3 characters").max(30, "Username must be less than 30 charaters").regex(/^[a-zA-Z0-9_-]+$/, "Username can only contain letters, numbers, hyphens, & underscores",),
@@ -91,6 +92,27 @@ function UsernameForm() {
                     Choose a custom username for your link-in-bio page. This will be your public URL.
                 </p>
             </div>
+
+            {hasCustomUsername && (
+                <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                    <div className="flex items-center justify-center">
+                        <div className="flex items-center gap-2">
+                            <User className="w-4 h-4 text-green-600" />
+                            <span className="text-sm font-medium text-green-900">
+                                Current Username
+                            </span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <span className="font-mono text-green-800 bg-white px-2 py-1 rounded text-sm">
+                                {currentSlug}
+                            </span>
+                            <Link href={`/u/${currentSlug}`} target="_blank" rel="noopener noreferrer" className="text-green-600 hover:text-green-700 transition-colors">
+                                <ExternalLink className="w-4 h-4" />
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
